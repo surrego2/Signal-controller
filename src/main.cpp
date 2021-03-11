@@ -2,6 +2,7 @@
 #include <settings.h>
 #include <Processors/circular_buffer.h>
 #include <Processors/transformer.h>
+#include <Sensors/sensors.h>
 
 #define VERSION "0.0.0"
 
