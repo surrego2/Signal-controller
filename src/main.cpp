@@ -4,6 +4,7 @@
 #include <Processors/transformer.h>
 #include <Sensors/sensors.h>
 #include <Sensors/analog_sensor.h>
+#include <Serializers/output.h>
 
 #define VERSION "0.0.0"
 
