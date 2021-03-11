@@ -1,5 +1,7 @@
 #include <Arduino.h>
 #include <settings.h>
+#include <Processors/circular_buffer.h>
+#include <Processors/transformer.h>
 
 #define VERSION "0.0.0"
 
