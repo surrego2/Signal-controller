@@ -1,5 +1,5 @@
-#ifndef ACTUATOR_H
-#define ACTUATOR_H
+#ifndef ACTUATORS_H
+#define ACTUATORS_H
 
 #include <Arduino.h>
 #include <entities/value.h>
@@ -15,19 +15,27 @@ class ActuatorABC {
     private:
         bool hasToChange;
         ValueABC<T> value;
+        uint8_t id;
         virtual void write(ValueABC<T> value);
 };
 
 template<class T>
+ActuatorABC<T>::ActuatorABC(uint8_t id) {
+    this->id = id;
+};
+
+
+template<class T>
 void ActuatorABC<T>::setValue(ValueABC<T> value) {
-    this->hasToChange = true;
+    
     this->value = value;
-}
+    this->hasToChange = true;
+};
 
 template<class T>
 uint8_t ActuatorABC<T>::getId() {
     return this->id;
-}
+};
 
 template<class T>
 void ActuatorABC<T>::excecute() {
@@ -35,11 +43,11 @@ void ActuatorABC<T>::excecute() {
         this->write(this->value);
         this->hasToChange = false;
     }
-}
+};
 
 template<class T>
 ValueABC<T> ActuatorABC<T>::getValue() {
     return this->value;
-}
+};
 
 #endif

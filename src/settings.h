@@ -2,7 +2,7 @@
 #define SETTINGS_H
 
 namespace CONFIG {
-    const uint8_t SENSOR_INPUNT = A0; 
+    const uint8_t SENSOR_INPUT = A0; 
 }
 
 #endif
